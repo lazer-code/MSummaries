@@ -6,14 +6,10 @@
 
 body {
     font-family: 'Libre Franklin', sans-serif;
-    /*
-    background: linear-gradient(to left, #2e2e2e 0%, #000000 100%, #2e2e2e 100%);
-    background-size: 200% 200%;
-    animation: gradientAnimation 4s ease infinite;
-    */
-    background: linear-gradient(45deg, #2e2e2e, #000000, #2e2e2e, #000000);
-    background-size: 1000% 100%;
-    animation: moveColors 5s infinite linear;
+
+    background: linear-gradient(135deg, #2e2e2e, #000000, #2e2e2e, #000000);
+    background-size: 400% 100%;
+    animation: moveColors 4s infinite linear;
 }
 
 h1 {
@@ -123,9 +119,10 @@ input {
 }
 
 .overlay {
-    background: linear-gradient(to right, #396cb3 0%, #1a3252 50%, #396cb3 100%);
-    background-size: 200% 200%;
-    animation: gradientAnimation 4s ease infinite;
+    background: linear-gradient(-135deg, #396cb3, #2b5186, #396cb3, #2b5186);
+    background-size: 400% 100%;
+    animation: moveColors 4s infinite linear;
+
     position: absolute;
     display: flex;
     align-items: center;
@@ -142,6 +139,5 @@ input {
 
 @keyframes moveColors {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }

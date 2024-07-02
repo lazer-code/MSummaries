@@ -6,26 +6,29 @@
     position: center;
     align-items: center;
 }
-  
+
 .menu-item {
     display: inline-block;
     margin-right: 20px;
     position: relative;
 }
-  
+
 .menu-item a {
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
     display: block;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
 }
-  
+
 .menu-item a:hover {
     background-color: #444;
     color: violet;
 }
-  
-.submenu {
+
+.submenu1 {
     position: absolute;
     top: 100%;
     left: 0;
@@ -37,21 +40,24 @@
     transform: translateY(10px);
     transition: all 0.3s ease-in-out;
 }
-  
-.menu-item:hover > .submenu {
+
+.menu-item:hover > .submenu1 {
     display: block;
     animation: fadeIn 0.3s forwards;
 }
-  
-.menu-item:not(:hover) > .submenu {
+
+.menu-item:not(:hover) > .submenu1 {
     animation: fadeOut 0.3s forwards;
 }
-  
-.submenu-item {
+
+.submenu1-item {
     margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
 }
-  
-.submenu-item a {
+
+.submenu1-item a {
     margin: 0;
     padding: 5px;
     border-bottom: none;
@@ -61,19 +67,20 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    font-size: 16px;
-    line-height: 16px;
+    font-weight: bold;
+    font-size: larger;
+    cursor: pointer;
 }
-  
-.submenu-item a:hover {
+
+.submenu1-item a:hover {
     background-color: #333;
     color: lawngreen;
 }
-  
-.subsubmenu {
+
+.submenu2 {
     position: absolute;
-    top: 0;
     left: 100%;
+    top: 0;
     display: none;
     background-color: #333;
     margin: 0;
@@ -82,23 +89,19 @@
     transform: translateX(10px);
     transition: all 0.3s ease-in-out;
 }
-  
-.submenu-item:hover > .subsubmenu {
+
+.submenu1-item:hover > .submenu2 {
     display: block;
-    animation: fadeIn 0.3s forwards;
-}
-  
-.submenu-item:not(:hover) > .subsubmenu {
-    animation: fadeOut 0.3s forwards;
-}
-  
-.subsubmenu a:hover {
-    background-color: #333;
-    color: yellow;
+    animation: fadeInRight 0.3s forwards;
+    top: 0;
+    transform: translateY(calc(var(--hovered-item-offset) - 0.5em));
 }
 
-@keyframes fadeIn
-{
+.submenu1-item:not(:hover) > .submenu2 {
+    animation: fadeOutRight 0.3s forwards;
+}
+
+@keyframes fadeIn {
     0% {
         opacity: 0;
         transform: translateY(10px);
@@ -109,8 +112,7 @@
     }
 }
 
-@keyframes fadeOut
-{
+@keyframes fadeOut {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -118,5 +120,27 @@
     100% {
         opacity: 0;
         transform: translateY(10px);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(10px);
     }
 }

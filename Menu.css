@@ -1,63 +1,122 @@
 .menu {
-    background: transparent;
-}
-
-.menu ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    background-color: #333;
+    position: center;
+    align-items: center;
 }
-
-.menu ul > li {
-    float: left;
+  
+.menu-item {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
 }
-
-.menu ul > li > a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+  
+.menu-item a {
+    color: #fff;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: Arial;
+    padding: 10px 20px;
+    display: block;
 }
-
-.menu ul > li > a:hover {
-    background-color: #0f1e30;
+  
+.menu-item a:hover {
+    background-color: #444;
     color: violet;
 }
-
-.submenu ul {
-    display: block;
+  
+.submenu {
     position: absolute;
-    background-color: #2b5186;
-    margin-top: 0;
-    max-height: 0;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease-in-out;
+}
+  
+.menu-item:hover > .submenu {
+    display: block;
+    animation: fadeIn 0.3s forwards;
+}
+  
+.menu-item:not(:hover) > .submenu {
+    animation: fadeOut 0.3s forwards;
+}
+  
+.submenu-item {
+    margin: 0;
+}
+  
+.submenu-item a {
+    margin: 0;
+    padding: 5px;
+    border-bottom: none;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-.submenu:hover ul {
-    display: block;
-    max-height: 200px;
-    background-color: #3462a3;
-}
-
-.submenu ul li {
-    float: none;
-    display: block;
-}
-
-.submenu ul li a {
-    padding: 12px 16px;
     font-size: 16px;
-    
+    line-height: 16px;
+}
+  
+.submenu-item a:hover {
+    background-color: #333;
+    color: lawngreen;
+}
+  
+.subsubmenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: none;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease-in-out;
+}
+  
+.submenu-item:hover > .subsubmenu {
+    display: block;
+    animation: fadeIn 0.3s forwards;
+}
+  
+.submenu-item:not(:hover) > .subsubmenu {
+    animation: fadeOut 0.3s forwards;
+}
+  
+.subsubmenu a:hover {
+    background-color: #333;
+    color: yellow;
 }
 
-.submenu ul li a:hover {
-    background-color: #2b5186;
-    font-weight: bold;
-    color: lawngreen;
+@keyframes fadeIn
+{
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut
+{
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
 }

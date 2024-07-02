@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async function()
 {
     try
     {
-        const response = await fetch('menu.html');
+        const response = await fetch('Menu.html');
         const data = await response.text();
         document.body.insertAdjacentHTML('afterbegin', data);
     }

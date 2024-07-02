@@ -24,7 +24,7 @@ title1
 
 h1 {
     font-weight: bold;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 20px;
     font-size: 54px;
     color: lawngreen;
@@ -34,7 +34,8 @@ h1 {
 
 h2 {
     font-weight: bold;
-    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 36px;
     color: #58c2ff;
     text-align: right;
@@ -48,6 +49,7 @@ h3 {
     font-size: 32px;
     color: violet;
     direction: rtl;
+    text-align: right;
 }
 
 p {
@@ -131,7 +133,7 @@ a {
     padding: 0 40px;
     text-align: center;
     height: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .overlay {

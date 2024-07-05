@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', async function()
 {
     try
     {
-        const response = await fetch('Pages/Menu.html');
+        const response = await fetch('Menu.html');
+
         const data = await response.text();
         document.body.insertAdjacentHTML('afterbegin', data);
     }
@@ -11,9 +12,6 @@ document.addEventListener('DOMContentLoaded', async function()
     catch (error)
     {
         console.error('Failed to load menu:', error);
-        const response = await fetch('Pages/Menu.html');
-        const data = await response.text();
-        document.body.insertAdjacentHTML('afterbegin', data);
     }
 });
 

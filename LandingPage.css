@@ -8,6 +8,7 @@ body {
     font-family: 'Libre Franklin', sans-serif;
 
     background: linear-gradient(135deg, #2e2e2e, #000000, #2e2e2e, #000000);
+    background: rad;
     background-size: 400% 100%;
     animation: moveColors 4s infinite linear;
 }

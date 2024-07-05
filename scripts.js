@@ -1,37 +1,21 @@
 /* Menu loading */
-document.addEventListener('DOMContentLoaded', async function() {
-    try {
-        const isIndex = window.location.pathname.endsWith('index.html');
-        let menuPath = isIndex ? 'Menu.html' : '../Menu.html';
-        
-        const response = await fetch(menuPath);
+document.addEventListener('DOMContentLoaded', async function()
+{
+    try
+    {
+        const response = await fetch('Pages/Menu.html');
         const data = await response.text();
         document.body.insertAdjacentHTML('afterbegin', data);
-        
-        const menuLinks = document.querySelectorAll('.menu a');
-
-        menuLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            
-            if (href === 'index.html') {
-                link.setAttribute('href', isIndex ? href : `../${href}`);
-            } else if (href === 'Menu.html') {
-                link.setAttribute('href', isIndex ? href : `../${href}`);
-            } else {
-                if (isIndex) {
-                    link.setAttribute('href', `Pages/${href}`);
-                } else if (window.location.pathname.includes('/Pages/')) {
-                    link.setAttribute('href', href);
-                }
-            }
-        });
-    } catch (error) {
+    }
+    
+    catch (error)
+    {
         console.error('Failed to load menu:', error);
+        const response = await fetch('Pages/Menu.html');
+        const data = await response.text();
+        document.body.insertAdjacentHTML('afterbegin', data);
     }
 });
-
-
-
 
 const container = document.getElementById('container');
 const signUpBtn = document.getElementById('signUp');

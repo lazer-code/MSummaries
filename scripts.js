@@ -1,18 +1,37 @@
 /* Menu loading */
-document.addEventListener('DOMContentLoaded', async function()
-{
-    try
-    {
-        const response = await fetch('Menu.html');
+document.addEventListener('DOMContentLoaded', async function() {
+    try {
+        const isIndex = window.location.pathname.endsWith('index.html');
+        let menuPath = isIndex ? 'Menu.html' : '../Menu.html';
+        
+        const response = await fetch(menuPath);
         const data = await response.text();
         document.body.insertAdjacentHTML('afterbegin', data);
-    }
-    
-    catch (error)
-    {
+        
+        const menuLinks = document.querySelectorAll('.menu a');
+
+        menuLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            
+            if (href === 'index.html') {
+                link.setAttribute('href', isIndex ? href : `../${href}`);
+            } else if (href === 'Menu.html') {
+                link.setAttribute('href', isIndex ? href : `../${href}`);
+            } else {
+                if (isIndex) {
+                    link.setAttribute('href', `Pages/${href}`);
+                } else if (window.location.pathname.includes('/Pages/')) {
+                    link.setAttribute('href', href);
+                }
+            }
+        });
+    } catch (error) {
         console.error('Failed to load menu:', error);
     }
 });
+
+
+
 
 const container = document.getElementById('container');
 const signUpBtn = document.getElementById('signUp');

@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,78 +6,64 @@
 
 body {
     font-family: 'Libre Franklin', sans-serif;
-
     background: linear-gradient(135deg, #2e2e2e, #000000, #2e2e2e, #000000);
-    background: rad;
     background-size: 400% 100%;
     animation: moveColors 4s infinite linear;
 }
 
+h1, h2, p, span, a {
+    color: white;
+}
+
 h1 {
     font-weight: bold;
-    margin: 0;
     margin-bottom: 1rem;
-    font-size: 36px;
-    color: white;
+    font-size: 2.25rem;
 }
 
 h2 {
     font-weight: bold;
-    margin: 0;
     margin-bottom: 1rem;
-    font-size: 56px;
-    color: white;
+    font-size: 3.5rem;
 }
 
 p {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 100;
-    line-height: 20px;
-    letter-spacing: 0.5px;
-    margin: 20px 0 30px;
-    color: white;
+    line-height: 1.25rem;
+    letter-spacing: 0.03125rem;
+    margin: 1.25rem 0 1.875rem;
 }
 
 span {
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 a {
-    color: white;
-    font-size: 14px;
+    font-size: 0.875rem;
     text-decoration: none;
-    margin: 15px 0;
+    margin: 0.9375rem 0;
 }
 
-
 .btn-grad {
-    background-image: linear-gradient(to right, #577db3 0%, #1c3355  50%, #1c3355  100%);
-    margin: 10px;
-    padding: 15px 45px;
+    background-image: linear-gradient(to right, #577db3 0%, #1c3355 50%, #1c3355 100%);
+    margin: 0.625rem;
+    padding: 0.9375rem 2.8125rem;
     text-align: center;
     text-transform: uppercase;
     transition: 0.1s;
     background-size: 200% auto;
-    color: white;            
-    border-radius: 10px;
+    border-radius: 0.625rem;
     display: block;
     cursor: pointer;
 }
 
 .btn-grad:hover {
     background-position: right center;
-    color: #fff;
-    text-decoration: none;
 }
 
-#signIn {
-    background-image: linear-gradient(to right, #1a3252 0%, #396cb3  50%, #396cb3  100%);
-    color: white;
-}
-
-#signUp {
-    background-image: linear-gradient(to right, #1a3252 0%, #396cb3  50%, #396cb3  100%);
-    color: white;
+#signIn, #signUp {
+    background-image: linear-gradient(to right, #1a3252 0%, #396cb3 50%, #396cb3 100%);
 }
 
 form {
@@ -86,7 +72,7 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 50px;
+    padding: 0 3.125rem;
     height: 100%;
     text-align: center;
 }
@@ -94,8 +80,8 @@ form {
 input {
     background-color: #eee;
     border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
+    padding: 0.75rem 0.9375rem;
+    margin: 0.5rem 0;
     width: 100%;
 }
 
@@ -104,41 +90,51 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #4568DC;
-    background: transparent;
 }
 
 .container {
     background-color: #1a3252;
-    border-radius: 50px;
-    box-shadow: 0 50px 100px #00000040, 0 50px 50px #00000038;
+    border-radius: 3.125rem;
+    box-shadow: 0 3.125rem 6.25rem #00000040, 0 3.125rem 3.125rem #00000038;
     position: relative;
     overflow: hidden;
-    width: 800px;
-    max-width: 100%;
-    min-height: 480px;
+    width: 100%;
+    max-width: 50rem;
+    min-height: 30rem;
 }
 
 .overlay {
     background: linear-gradient(-135deg, #396cb3, #2b5186, #396cb3, #2b5186);
     background-size: 400% 100%;
     animation: moveColors 4s infinite linear;
-
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 2.5rem;
     text-align: center;
     top: 0;
     height: 100%;
     width: 100%;
-    transform: translateX(0);
     transition: transform 0.6s ease-in-out;
 }
 
 @keyframes moveColors {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 1.875rem; }
+    h2 { font-size: 2.5rem; }
+    .container { width: 90%; min-height: 20rem; }
+    .overlay { padding: 0 1.25rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 2rem; }
+    .container { width: 100%; min-height: 15rem; }
+    .overlay { padding: 0 0.625rem; }
 }

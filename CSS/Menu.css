@@ -13,6 +13,7 @@
   transform: translateX(-100%);
   z-index: 999;
   padding-top: 50px;
+  direction: rtl;
 }
 
 .menu ul {
@@ -20,6 +21,7 @@
   padding-left: 5%;
   padding-right: 5%;
   margin: 0;
+  direction: ltr;
 }
 
 .menu li {
@@ -87,12 +89,26 @@
   transform: rotate(45deg) translate(-6px, -6px);
 }
 
-.menu li.open > ul > li > a {
+/* Color definitions */
+.menu li.open > a {
+  color: violet;
+}
+
+.menu li.open > ul > li.open > a {
+  color: lawngreen;
+}
+
+.menu li.open > ul > li.open > ul > li.open > a {
   color: yellow;
 }
 
-.menu li.open > a {
-  color: lawngreen;
+.menu li.open > ul > li.open > ul > li.open > ul > li > a {
+  color: lightblue;
+}
+
+/* Reset colors for non-direct paths */
+.menu li > a {
+  color: white;
 }
 
 /* Media Queries */

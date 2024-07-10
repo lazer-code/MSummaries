@@ -85,3 +85,15 @@
 .menu-toggle.open .bar:nth-child(3) {
   transform: rotate(45deg) translate(-6px, -6px);
 }
+
+.menu li.open > ul > li > a {
+  color: lawngreen;
+}
+
+.menu li.open > ul > li > ul > li > a {
+  color: yellow;
+}
+
+.menu li.open > ul > li > ul > li > ul > li > a {
+  color: white;
+}

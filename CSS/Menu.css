@@ -97,9 +97,11 @@
 /* Media Queries */
 @media screen and (max-width: 768px) {
   .menu {
-    width: 100%;
-    min-width: 0;
+    width: 90%;
+    min-width: 0%;
     padding-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .menu li a {

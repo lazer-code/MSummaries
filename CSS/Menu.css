@@ -7,18 +7,20 @@
   height: 100%;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0; /* Align menu to the right */
   overflow-y: auto;
   transition: transform 0.4s ease;
-  transform: translateX(-100%);
+  transform: translateX(100%); /* Slide out from the right */
   z-index: 999;
   padding-top: 50px;
+  text-align: right; /* Align text content to the right */
 }
 
 .menu ul {
   list-style-type: none;
   padding: 0 10%;
   margin: 0;
+  text-align: right; /* Align list items to the right */
 }
 
 .menu li {
@@ -47,7 +49,7 @@
 }
 
 .menu.open {
-  transform: translateX(0);
+  transform: translateX(0); /* Slide in to the right */
 }
 
 .menu-toggle {
@@ -55,9 +57,9 @@
   cursor: pointer;
   position: fixed;
   top: 10px;
-  left: 10px;
+  right: 10px;
   z-index: 1000;
-} 
+}
 
 .bar {
   width: 30px;

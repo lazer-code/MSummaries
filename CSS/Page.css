@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,14 +6,12 @@
 
 body {
     font-family: 'Libre Franklin', sans-serif;
-
     background: linear-gradient(135deg, #2e2e2e, #000000, #2e2e2e, #000000);
     background-size: 400% 100%;
     animation: moveColors 4s infinite linear;
 }
 
-title1
-{
+title1 {
     font-weight: bold;
     margin: 0;
     margin-bottom: 1rem;
@@ -140,7 +138,6 @@ a {
     background: linear-gradient(-135deg, #396cb3, #2b5186, #396cb3, #2b5186);
     background-size: 400% 100%;
     animation: moveColors 4s infinite linear;
-
     position: absolute;
     display: flex;
     align-items: center;
@@ -156,4 +153,43 @@ a {
 @keyframes moveColors {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 28px;
+    }
+    p, li {
+        font-size: 20px;
+    }
+    .container, .content-container {
+        width: 80%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    p, li {
+        font-size: 18px;
+    }
+    .container, .content-container {
+        width: 100%;
+        padding: 10px;
+    }
 }

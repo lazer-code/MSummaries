@@ -17,7 +17,8 @@
 
 .menu ul {
   list-style-type: none;
-  padding: 0;
+  padding-left: 5%;
+  padding-right: 5%;
   margin: 0;
 }
 
@@ -68,7 +69,7 @@
 
 .bar {
   width: 30px;
-  height: 3px;
+  height: 5px;
   background-color: white;
   margin: 6px 0;
   transition: 0.4s;

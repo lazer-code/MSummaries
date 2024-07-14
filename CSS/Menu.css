@@ -57,7 +57,7 @@
   cursor: pointer;
   position: fixed;
   top: 10px;
-  right: 10px;
+  right: 50px;
   z-index: 1000;
 }
 
@@ -67,6 +67,14 @@
   background-color: white;
   margin: 6px 0;
   transition: 0.4s;
+}
+
+.menu-toggle.open:hover .bar {
+  background-color: indianred;
+}
+
+.menu-toggle:not(.open):hover .bar {
+  background-color: aqua;
 }
 
 .menu-toggle.open .bar:nth-child(1) {

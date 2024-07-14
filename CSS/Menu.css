@@ -81,7 +81,8 @@
   transform: rotate(45deg) translate(-6px, -6px);
 }
 
-.menu > ul > li > a {
+.menu > ul > li.open > a,
+.menu > ul > li > a:hover {
   color: violet;
 }
 
@@ -97,7 +98,7 @@
   color: turquoise;
 }
 
-.menu > ul > li > a:hover,
+.menu > ul > li > a,
 .menu > ul > li > ul > li > a:hover,
 .menu > ul > li > ul > li > ul > li > a:hover,
 .menu > ul > li > ul > li > ul > li > ul > li > a:hover {
